@@ -20,6 +20,13 @@ function App() {
     const[ratingValue, setRatingValue] = useState<RatingValueType>(0)
     const[accardionCollapsed, setAccardionCollapsed] = useState<boolean>(false)
     const[switchOn, setSwitchOn] = useState(false)
+
+    const onChangeAccardionCallBack = () => {
+        setAccardionCollapsed(!accardionCollapsed)
+    }
+
+    const accardionCallBack = (id: number) => alert(`user with ID ${id} should be happy`)
+
     return (
         <div className='App'>
 
@@ -29,23 +36,20 @@ function App() {
             {/*<UnconntroledAccardion titleValue={'Menu'}/>
             <UnconntroledAccardion titleValue={'Users'}/>*/}
             <UncontrolledRaiting/>
-            <Accardion titleValue={'Menu'} collapsedMenu={accardionCollapsed} onChange={()=>{ setAccardionCollapsed(!accardionCollapsed)}}/>
+            <Accardion items={[
+                {title:'Artem',value: 1},
+                {title: 'Kirril',value: 2},
+                {title: 'Ivan',value: 3},
+                {title:'Anna', value: 4}]}
+                       titleValue={'Menu'}
+                       collapsedMenu={accardionCollapsed}
+                       onChange={onChangeAccardionCallBack}
+                       onClick={(value)=>{accardionCallBack(value)}}
+            />
+
 
            <Raiting value={ratingValue} onClick={setRatingValue}/>
             <UnconntroledAccardion titleValue={'MENU'}/>
-
-           {/* <PageTitle title={'This is APP title'}/>
-            <PageTitle title={'My friends'}/>
-            Artikle 1
-            <Accardion titleValue={'Menu'} callabsedMenu = {true}/>
-            <Accardion titleValue={'Users'} callabsedMenu = {false}/>
-            <UncontrolledRaiting value = {0}/>
-            <UncontrolledRaiting value = {1}/>
-            <UncontrolledRaiting value = {2}/>
-            <UncontrolledRaiting value = {3}/>
-            <UncontrolledRaiting value = {4}/>
-            <UncontrolledRaiting value = {5}/>
-*/}
 
             <UncontrolledInput />
             <ControlledInput />

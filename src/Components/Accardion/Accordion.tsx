@@ -1,9 +1,18 @@
 import React from "react";
 
+
+
+type ItemType = {
+    title: string
+    value: any
+}
+
 type AccardionPropsType ={
     titleValue: string
     collapsedMenu: boolean
     onChange: ()=>void
+    items: Array<ItemType>
+    onClick: (value: any)=> void
 }
 
 
@@ -14,7 +23,7 @@ type AccardionPropsType ={
 function Accardion(props: AccardionPropsType) {
        return<div>
            <AccardionTitle title={props.titleValue} onChange={props.onChange}/>
-           { !props.collapsedMenu &&  <AccardionBody/>}
+           { !props.collapsedMenu &&  <AccardionBody items={props.items} onClick={props.onClick}/>}
                </div>
 
 }
@@ -33,13 +42,19 @@ function AccardionTitle(props: AccardionTitlepropsType) {
     return <h3 onClick={props.onChange}>{props.title}</h3>
 }
 
-function AccardionBody() {
+
+type BodyPropsType = {
+    items: Array<ItemType>
+    onClick: (value: any)=> void
+}
+
+function AccardionBody(props: BodyPropsType) {
+
+
+
     return <div>
         <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
+            {props.items.map((el,index)=><li onClick={()=>{props.onClick(el.value)}} key={index}>{el.title}</li>)}
         </ul>
     </div>
 }
