@@ -6,6 +6,13 @@ import OnOff from "./Components/OnOff/OnOff";
 import UnconntroledAccardion from "./Components/UncontrolledAccardion/UncontrolledAccordion";
 import {UncontrolledRaiting} from "./Components/UncontrolledRaiting/UncontrolledRaiting";
 import UncontrolledOnOf from "./Components/UncontrolledOnOff/UncontrolledOnOf";
+import {
+    ControlledCheckbox,
+    ControlledInput, ControlledInput1, ControlledSelect,
+    GetValueOfUncontrolledInputByButtonPress,
+    TrackValueOfUncontrolledInput,
+    UncontrolledInput
+} from "./Components/UncontrolledInput";
 
 
 function App() {
@@ -25,6 +32,7 @@ function App() {
             <Accardion titleValue={'Menu'} collapsedMenu={accardionCollapsed} onChange={()=>{ setAccardionCollapsed(!accardionCollapsed)}}/>
 
            <Raiting value={ratingValue} onClick={setRatingValue}/>
+            <UnconntroledAccardion titleValue={'MENU'}/>
 
            {/* <PageTitle title={'This is APP title'}/>
             <PageTitle title={'My friends'}/>
@@ -38,6 +46,20 @@ function App() {
             <UncontrolledRaiting value = {4}/>
             <UncontrolledRaiting value = {5}/>
 */}
+
+            <UncontrolledInput />
+            <ControlledInput />
+            <div>
+            <TrackValueOfUncontrolledInput/>
+            </div>
+            <div>
+                <GetValueOfUncontrolledInputByButtonPress/>
+            </div>
+            <div>
+                <ControlledInput1/>
+                <ControlledCheckbox/>
+                <ControlledSelect></ControlledSelect>
+            </div>
         </div>
     );
 }

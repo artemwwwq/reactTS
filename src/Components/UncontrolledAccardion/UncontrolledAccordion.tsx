@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Accardion from "../Accardion/Accordion";
 
 type AccardionPropsType ={
     titleValue: string
@@ -13,29 +14,26 @@ type AccardionPropsType ={
 function UnconntroledAccardion(props: AccardionPropsType) {
 
 
-
     let [callabsedMenu, setCollapsedMenu] = useState(false)
 
 
-       return<div>
-           <AccardionTitle title={props.titleValue} onClick={()=>setCollapsedMenu(!callabsedMenu)}/>
-
-           { !callabsedMenu &&  <AccardionBody/> }
-               </div>
+    return <div>
+            <AccardionTitle title={props.titleValue} onClick = {()=>{  setCollapsedMenu(!callabsedMenu)  }}/>
+        {!callabsedMenu && <AccardionBody />}
+    </div>
 }
-
 
 
 
 type AccardionTitlepropsType = {
     title: string
-    onClick: ()=>void
+    onClick: ()=> void
 }
 
 
 function AccardionTitle(props: AccardionTitlepropsType) {
 
-    return <h3 onClick={()=> props.onClick() }>{props.title}</h3>
+    return <h3 onClick={()=>{props.onClick()}}>{props.title}</h3>
 }
 
 function AccardionBody() {
