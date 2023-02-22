@@ -6,9 +6,9 @@ type AccardionPropsType ={
    // collapsedMenu: boolean
 }
 
+const UnconntroledAccardion = React.memo(UnconntroledAccardionM)
 
-
-function UnconntroledAccardion(props: AccardionPropsType) {
+function UnconntroledAccardionM(props: AccardionPropsType) {
 
 
     let [state, dispatch] = useReducer(reducer,{collapsed: false})

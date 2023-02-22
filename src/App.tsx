@@ -14,6 +14,7 @@ import {
     UncontrolledInput
 } from "./Components/UncontrolledInput";
 import {Select} from "./Components/Select/select";
+import {Exemple1} from "./Components/React-memo";
 
 
 function App() {
@@ -54,24 +55,11 @@ function App() {
             />
 
 
-           <Raiting value={ratingValue} onClick={setRatingValue}/>
-            <UnconntroledAccardion titleValue={'MENU'}/>
+      <div>
+          <Exemple1/>
+      </div>
 
-            <UncontrolledInput />
-            <ControlledInput />
-            <div>
-            <TrackValueOfUncontrolledInput/>
-            </div>
-            <div>
-                <GetValueOfUncontrolledInputByButtonPress/>
-            </div>
-            <div>
-                <ControlledInput1/>
-                <ControlledCheckbox/>
-                <ControlledSelect></ControlledSelect>
-            </div>
-            <Select value={2} onChange={selectChange} items={[{value: 1, title: 'Moskow'},{value: 2, title: 'Minsk'}, {value: 3, title: 'Kiev'}]}/>
-            <Select onChange={selectChange} items={[{value: 1, title: 'Moskow'},{value: 2, title: 'Minsk'}, {value: 3, title: 'Kiev'}]}/>
+
         </div>
     );
 }

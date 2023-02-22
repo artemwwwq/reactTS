@@ -1,14 +1,14 @@
-import {useState} from "react";
+import React, {useState} from "react";
 
 type PropsType = {
    on: boolean
     onChange: (on: boolean) => void
 }
 
+const OnOff = React.memo(OnOffM)
 
 
-
-function OnOff(props: PropsType) {
+function OnOffM(props: PropsType) {
 
 
 

@@ -15,12 +15,9 @@ type AccardionPropsType ={
     onClick: (value: any)=> void
 }
 
+const Accardion = React.memo(AccardionMemo)
 
-
-
-
-
-function Accardion(props: AccardionPropsType) {
+function AccardionMemo(props: AccardionPropsType) {
        return<div>
            <AccardionTitle title={props.titleValue} onChange={props.onChange}/>
            { !props.collapsedMenu &&  <AccardionBody items={props.items} onClick={props.onClick}/>}
