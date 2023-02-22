@@ -13,6 +13,7 @@ import {
     TrackValueOfUncontrolledInput,
     UncontrolledInput
 } from "./Components/UncontrolledInput";
+import {Select} from "./Components/Select/select";
 
 
 function App() {
@@ -20,6 +21,11 @@ function App() {
     const[ratingValue, setRatingValue] = useState<RatingValueType>(0)
     const[accardionCollapsed, setAccardionCollapsed] = useState<boolean>(false)
     const[switchOn, setSwitchOn] = useState(false)
+
+
+    const selectChange = () => {
+        console.log(232)
+    }
 
     const onChangeAccardionCallBack = () => {
         setAccardionCollapsed(!accardionCollapsed)
@@ -64,6 +70,8 @@ function App() {
                 <ControlledCheckbox/>
                 <ControlledSelect></ControlledSelect>
             </div>
+            <Select value={2} onChange={selectChange} items={[{value: 1, title: 'Moskow'},{value: 2, title: 'Minsk'}, {value: 3, title: 'Kiev'}]}/>
+            <Select onChange={selectChange} items={[{value: 1, title: 'Moskow'},{value: 2, title: 'Minsk'}, {value: 3, title: 'Kiev'}]}/>
         </div>
     );
 }

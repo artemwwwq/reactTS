@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import Accardion from "../Accardion/Accordion";
+import React, {useReducer} from "react";
+import {reducer, TOGGLE_COLL} from "./Reducer";
 
 type AccardionPropsType ={
     titleValue: string
@@ -8,18 +8,19 @@ type AccardionPropsType ={
 
 
 
-
-
-
 function UnconntroledAccardion(props: AccardionPropsType) {
 
 
-    let [callabsedMenu, setCollapsedMenu] = useState(false)
+    let [state, dispatch] = useReducer(reducer,{collapsed: false})
+
+    const onClickDispatchHandler = () => {
+        dispatch({type: TOGGLE_COLL})
+    }
 
 
     return <div>
-            <AccardionTitle title={props.titleValue} onClick = {()=>{  setCollapsedMenu(!callabsedMenu)  }}/>
-        {!callabsedMenu && <AccardionBody />}
+            <AccardionTitle title={props.titleValue} onClick = {onClickDispatchHandler}/>
+        {!state.collapsed && <AccardionBody />}
     </div>
 }
 
