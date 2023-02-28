@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 
+/*
 const Counter = (props: { count: number }) => {
     return <div>{props.count}</div>
 }
@@ -28,4 +29,4 @@ export const Exemple1 = () => {
         <Users users={users}/>
     </>
 
-}
+}*/

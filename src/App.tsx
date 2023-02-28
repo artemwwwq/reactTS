@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import Accardion from './Components/Accardion/Accordion';
-import {Raiting, RatingValueType} from "./Components/Raiting/Raiting";
+import {RatingValueType} from "./Components/Raiting/Raiting";
 import OnOff from "./Components/OnOff/OnOff";
 import UnconntroledAccardion from "./Components/UncontrolledAccardion/UncontrolledAccordion";
 import {UncontrolledRaiting} from "./Components/UncontrolledRaiting/UncontrolledRaiting";
@@ -14,7 +14,7 @@ import {
     UncontrolledInput
 } from "./Components/UncontrolledInput";
 import {Select} from "./Components/Select/select";
-import {Exemple1} from "./Components/React-memo";
+import {HelpsToReactMemo} from "./Components/UseMemo";
 
 
 function App() {
@@ -56,7 +56,7 @@ function App() {
 
 
       <div>
-          <Exemple1/>
+          <HelpsToReactMemo/>
       </div>
 
 
