@@ -14,14 +14,14 @@ import {
     UncontrolledInput
 } from "./Components/UncontrolledInput";
 import {Select} from "./Components/Select/select";
-import {HelpsToReactMemo} from "./Components/UseMemo";
+import {HelpsToReactMemo, LikesUseCallBack} from "./Components/UseMemo";
 
 
 function App() {
 
-    const[ratingValue, setRatingValue] = useState<RatingValueType>(0)
-    const[accardionCollapsed, setAccardionCollapsed] = useState<boolean>(false)
-    const[switchOn, setSwitchOn] = useState(false)
+    const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
+    const [accardionCollapsed, setAccardionCollapsed] = useState<boolean>(false)
+    const [switchOn, setSwitchOn] = useState(false)
 
 
     const selectChange = () => {
@@ -37,27 +37,32 @@ function App() {
     return (
         <div className='App'>
 
-          {/*  <OnOff on={switchOn} onChange={setSwitchOn}/>*/}
+            {/*  <OnOff on={switchOn} onChange={setSwitchOn}/>*/}
             <UncontrolledOnOf onChange={setSwitchOn}/> {switchOn.toString()}
 
             {/*<UnconntroledAccardion titleValue={'Menu'}/>
             <UnconntroledAccardion titleValue={'Users'}/>*/}
             <UncontrolledRaiting/>
             <Accardion items={[
-                {title:'Artem',value: 1},
-                {title: 'Kirril',value: 2},
-                {title: 'Ivan',value: 3},
-                {title:'Anna', value: 4}]}
+                {title: 'Artem', value: 1},
+                {title: 'Kirril', value: 2},
+                {title: 'Ivan', value: 3},
+                {title: 'Anna', value: 4}]}
                        titleValue={'Menu'}
                        collapsedMenu={accardionCollapsed}
                        onChange={onChangeAccardionCallBack}
-                       onClick={(value)=>{accardionCallBack(value)}}
+                       onClick={(value) => {
+                           accardionCallBack(value)
+                       }}
             />
 
 
-      <div>
-          <HelpsToReactMemo/>
-      </div>
+            <div>
+                <HelpsToReactMemo/>
+            </div>
+            <div>
+                <LikesUseCallBack/>
+            </div>
 
 
         </div>
@@ -71,7 +76,6 @@ type  PageTitlePropsType = {
 function PageTitle(props: PageTitlePropsType) {
     return <h1>{props.title}</h1>
 }
-
 
 
 export default App;
